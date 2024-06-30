@@ -20,7 +20,11 @@
 {%- endstyle -%}
 
 {%- unless settings.cart_type == 'drawer' -%}
-  <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+  {% if settings.enable_cart_upsell %}
+    <script src="{{ 'cart.js' | asset_url }}" defer="defer" data-cart-upsell-variant-id="{{ settings.cart_upsell_variant_id }}"></script>
+  {% else %}
+    <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
 {%- endunless -%}
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>

@@ -28,6 +28,7 @@
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
+      {% if settings.cart_upsell_variant_id and settings.default_upsell_enabled_in_cart %}data-upsell-variant-id="{{ settings.cart_upsell_variant_id }}"{% endif %}
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg

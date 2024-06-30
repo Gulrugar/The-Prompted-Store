@@ -8,7 +8,11 @@
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{% if settings.enable_cart_upsell %}
+  <script src="{{ 'cart.js' | asset_url }}" defer="defer" data-cart-upsell-variant-id="{{ settings.cart_upsell_variant_id }}"></script>
+{% else %}
+  <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
 <style>
@@ -449,6 +453,9 @@
         </form>
       </cart-drawer-items>
       <div class="drawer__footer">
+
+        {% render 'cart-upsell-custom' %}
+        
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
             <summary>

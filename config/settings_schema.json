@@ -1465,5 +1465,57 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Cart Simple Upsell",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_cart_upsell",
+        "label": "Use Cart Upsell",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "default_upsell_enabled_in_cart",
+        "label": "Upsell is in cart by default",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_variant_id",
+        "label": "Product variant ID",
+        "placeholder": "Enter the upsell product variant ID",
+        "info": "Note: Products with only the default variant still have a variant ID that differs from product ID."
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_toggle_text",
+        "label": "Upsell Toggle Text",
+        "default": "Add Upsell Product"
+      },
+      {
+        "type": "select",
+        "id": "cart_upsell_alignment",
+        "label": "Upsell Toggle Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "color",
+        "id": "cart_upsell_toggle_color",
+        "label": "Upsell Toggle Color",
+        "default": "#4CAF50"
+      }
+    ]
   }
 ]
